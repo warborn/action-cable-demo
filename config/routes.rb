@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   get '/users/me', to: 'users#me'
+
+  post '/notifications', to: 'notifications#create'
 end
