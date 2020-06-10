@@ -1,7 +1,9 @@
 class NotificationsController < ApplicationController
 
   def create
-    # params[:notification][:type]
+    notification = NotificationsHelper.create_notification(params[:notification])
+
+    render status: :created
   end
 
 end
