@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/users/me', to: 'users#me'
 
   post '/notifications', to: 'notifications#create'
+
+  mount ActionCable.server => '/cable'
 end
