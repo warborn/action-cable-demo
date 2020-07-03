@@ -10,7 +10,7 @@ module NotificationsHelper
     method_name = "create_#{notification[:type]}_notification".to_sym
     if NotificationsHelper.respond_to?(method_name)
       notification_content = NotificationsHelper.method(method_name).call()
-      {type: notification[:type], **notification_content}
+      Notification.create({category: notification[:type], **notification_content})
     else
       nil
     end
