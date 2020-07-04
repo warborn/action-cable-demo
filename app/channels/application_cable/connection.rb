@@ -21,6 +21,9 @@ module ApplicationCable
       return nil unless token
 
       Warden::JWTAuth::UserDecoder.new.call(token, :user, Warden::JWTAuth::EnvHelper.aud_header(Rails.env))
+
+    rescue Warden::JWTAuth::Errors::RevokedToken => error
+      puts error.to_s
     end
 
     def get_token
