@@ -34,8 +34,6 @@ class LastLoginChangesJob < ApplicationJob
     notifications = get_external_notifications(user)
     summary = get_summary_of_notifications(notifications)
 
-    puts "****PERFORMING JOB: ", summary.inspect
-
     return if summary.empty?
 
     ActionCable.server.broadcast 'notifications_channel', {
