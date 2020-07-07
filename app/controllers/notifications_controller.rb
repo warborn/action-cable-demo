@@ -4,7 +4,7 @@ class NotificationsController < ApplicationController
     notification = NotificationsHelper.create_notification(params[:notification])
 
     if notification
-      @current_user.notifications << notification
+      current_user.notifications << notification
       ActionCable.server.broadcast 'notifications_channel', notification.to_h
     end
 
