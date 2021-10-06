@@ -21,7 +21,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-jwt', '~> 0.7.0'
 gem 'rack-cors', '~> 1.1', '>= 1.1.1'
 gem 'redis', '~> 4.2'
-gem 'sidekiq', '~> 6.1'
+gem 'sidekiq', '~> 6.2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
